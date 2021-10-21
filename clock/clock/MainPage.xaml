@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clock.MainPage">
+
+    <AbsoluteLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame Padding="10" CornerRadius="300" WidthRequest="300" HeightRequest="300" BackgroundColor="Aqua"/>
+
+
+        <Grid  RowDefinitions="*, *" RowSpacing="0" Margin="152, 20" x:Name="MinuteHand">
+            <BoxView Grid.Row="0" BackgroundColor="Black" WidthRequest="15" HeightRequest="140" />
+            <BoxView Grid.Row="1" Opacity="0" WidthRequest="15" HeightRequest="140" />
+        </Grid>
+
+        <Grid  RowDefinitions="*, *" RowSpacing="0" Margin="157, 15" x:Name="SecondHand">
+            <BoxView Grid.Row="0" BackgroundColor="Chocolate" WidthRequest="5" HeightRequest="145" />
+            <BoxView Grid.Row="1" Opacity="0" WidthRequest="5" HeightRequest="142" />
+        </Grid>
+
+        <Grid  RowDefinitions="*, *" RowSpacing="0" Margin="150, 90" x:Name="HourHand">
+            <BoxView Grid.Row="0" BackgroundColor="Bisque" WidthRequest="20" HeightRequest="70" />
+            <BoxView Grid.Row="1" Opacity="0" WidthRequest="20" HeightRequest="70" />
+                                <!--Opacity - прозрачность -->
+        </Grid>
+
+        <Frame CornerRadius="30" WidthRequest="1" HeightRequest="1" Margin="140, 140" BackgroundColor="Red"/>
+    </AbsoluteLayout>
+
+</ContentPage>
