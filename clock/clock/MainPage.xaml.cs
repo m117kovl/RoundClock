@@ -20,7 +20,7 @@ namespace clock
 
         private void InitTimer()
         {
-            var timer = new Timer(100);
+            var timer = new Timer(1000);
             timer.Elapsed += Update;
             timer.AutoReset = true;
             timer.Enabled = true;
@@ -29,9 +29,26 @@ namespace clock
         private void Update(object sender, ElapsedEventArgs e)
         {
             var timeNow = DateTime.Now;
-            SecondHand.Rotation = ((360 * timeNow.Second) / 60);
-            MinuteHand.Rotation = ((360 * timeNow.Minute ) / 60);
-            HourHand.Rotation = ((360 * timeNow.Hour ) / 12);
+            int s = ((360 * timeNow.Second) / 60);
+            int m= ((360 * timeNow.Minute) / 60);
+            int h= ((360 * timeNow.Hour) / 12);
+            
+            if (s==0 || m==0 || h==0)
+            {
+                SecondHand.Rotation =s;
+                MinuteHand.Rotation = m;
+                HourHand.Rotation = h;
+            }
+            else
+            {
+                SecondHand.RotateTo(s);
+                MinuteHand.RotateTo(m);
+                HourHand.RotateTo(h);
+            }
+            //SecondHand.Rotation = ((360 * timeNow.Second) / 60);
+            //MinuteHand.Rotation = ((360 * timeNow.Minute ) / 60);
+            //HourHand.Rotation = ((360 * timeNow.Hour ) / 12);
+            //SecondHand.RotateTo
         }
     }
 }
